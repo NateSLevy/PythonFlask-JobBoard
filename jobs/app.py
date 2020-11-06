@@ -1,7 +1,7 @@
 from flask import Flask, render_template, g
 import sqlite3
 
-PATH = 'db\jobs.sqlite'
+PATH = 'db/jobs.sqlite'
 app = Flask(__name__)
 
 def open_connection():
@@ -10,7 +10,7 @@ def open_connection():
     if not connection:
         connection = g._connection = sqlite3.connect(PATH)
 
-    connection.row_facroty = sqlite3.Row
+    connection.row_factory = sqlite3.Row
 
     return connection
 
