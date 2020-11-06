@@ -1,7 +1,7 @@
 from flask import Flask, render_template, g
 import sqlite3
 
-PATH = C:\Users\SNL\Documents\GitHub\PythonFlask-JobBoard\db\jobs.sqlite
+PATH = r'C:\Users\SNL\Documents\GitHub\PythonFlask-JobBoard\db\jobs.sqlite'
 app = Flask(__name__)
 
 def open_connection():
@@ -21,7 +21,7 @@ def exceute_sql(sql, values = (), commit = False, single = False):
     if commit is True:
         results  = connection.commit()
     else:
-        results = if: cursor.fetchone() if single else cursor.fetchall()
+        results = cursor.fetchone() if single else cursor.fetchall()
 
     return results
 
